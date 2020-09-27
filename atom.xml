@@ -6,7 +6,7 @@
   <link href="http://benjiamingluxi.github.io/newblog/atom.xml" rel="self"/>
   
   <link href="http://benjiamingluxi.github.io/newblog/"/>
-  <updated>2020-09-25T04:27:11.096Z</updated>
+  <updated>2020-09-27T07:43:26.942Z</updated>
   <id>http://benjiamingluxi.github.io/newblog/</id>
   
   <author>
@@ -17,12 +17,20 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>my first blog</title>
+    <title>这是写的测试博客~~</title>
     <link href="http://benjiamingluxi.github.io/newblog/2020/09/22/my-first-blog/"/>
     <id>http://benjiamingluxi.github.io/newblog/2020/09/22/my-first-blog/</id>
     <published>2020-09-22T13:33:24.000Z</published>
-    <updated>2020-09-25T04:27:11.096Z</updated>
+    <updated>2020-09-27T07:43:26.942Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;这是写的测试文档&quot;&gt;&lt;a href=&quot;#这是写的测试文档&quot; class=&quot;headerlink&quot; title=&quot;这是写的测试文档&quot;&gt;&lt;/a&gt;这是写的测试文档&lt;/h1&gt;&lt;p&gt;测试显示博客内容</summary>
+        
+      
     
     
     
