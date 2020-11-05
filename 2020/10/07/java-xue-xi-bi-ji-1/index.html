@@ -570,21 +570,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-02
+                    2020-11-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    10 分
                 </div>
                 
 
@@ -687,6 +687,32 @@
 <p>不要编写返回引用 可变对象 的访问器方法。见Test2.java</p>
 <p>产生疑问？方法调用对象还是对象调用方法。按理说应该是对象调用方法。但是 有句话很难理解 </p>
 <p>方法可以访问所调用对象的私有数据。这句话表面上就是方法调用对象。好 这个问题不是这句话的关键点，先不考虑这个问题，关键是 test类中的方法可以访问test类任何一个对象的私有域。</p>
+<p>2020年11月3日19:59:49</p>
+<p>primitive 基本的原始的，immutable 不可变的。final 修饰符 修饰基本类和不可变类的域。见4.3.9加了final不能Set，初始化之后不能修改。  </p>
+<p>不可变类 ：类中的每个方法不会改变其对象，例如String类。</p>
+<p>private int id ;private static int nextId; 1000类对象有1000个id，但只有一个nextId，换言之nextId属于类不属于对象。而且每个类只能有一个这样的域。在绝大多数的面向对象编程语言中，静态域也叫类域</p>
+<p> public void setId(){id = nextId; nextId++;}  假定harry.setId();   上述代码类似harry.id=Employee.nextId; Employee.nextId++;</p>
+<p>静态常量 ：public class Math{public static final double PI =3.14159265358979323846;} Math.PI获得这个常量。</p>
+<p>public class System{public static final PrintStream out;…}   System.out使用 </p>
+<p>前面提到过每个类对象会对公有域进行修改，但是公有常量，final 域没问题，因为一旦初始化赋值之后不能修改。</p>
+<p>System类中有一个setOut方法，它可以将System.out设置为不同的流， 问题来了，他为什么可以改变final变量的值 ，因为它是一个本地方法，java本地方法会绕过JAVA语言的存取控制机制。在自己编写程序时不应该这样处理。</p>
+<p>静态方法：不能面向对象的实施操作方法，不使用对象，话句话说没有隐式参数，也就是没有this参数。静态方法不能访问实例域，但是可以访问本类的静态域。类名调用这个静态方法。</p>
+<p>下面这两种方法使用静态方法：1、不需要放访问对象状态，其所需参数都是显示参数。2、只需要访问类的静态域</p>
+<p>静态方法还有另一种用途，静态工厂方法 factory method 来构造对象，如类 LcoalDate和NumberFormat ，见4.4.4</p>
+<p>current 当前的，</p>
+<p>2020年11月4日20:24:15</p>
+<p>每一个类可以有一个main方法，Idea 里面我写的代码都是单元测试.见idea</p>
+<p>如果独立测试test类，只需执行 java test 。如果test类是一个更大型应用程序的一部分，就可以使用 java Application ，test类的main方法就不会执行 ,见idea 中的StaticTest.java</p>
+<p>见4.5上面一点点   java Employee  和 java StaticTest 的区别 （？？）见idea StaticTest.java #在上面</p>
+<p> 方法参数：回忆一下有关将参数传递给函数或方法的专业术语。按值调用（call by value ）:即方法接收的是调用者提供的值；按引用调用（call by reference）方法接收的是调用者提供的变量的地址。</p>
+<p>方法可以修改传递引用所对应的变量值，但是不能修改传递值调用所对应的变量值。</p>
+<p>java程序设计语言总是采用按值调用的，方法得到的是所有参数值得一个拷贝，特别是，方法不能修改传递给它的任何参数变量的内容。ex:double a =10; harry.raiseSalary(a);  不必理睬方法的具体实现，方法调用后，a 还是10。</p>
+<p>2020年11月5日20:20:00</p>
+<p>方法参数共有两种类型：基本数据类型（数字，布尔值）和 对象引用。上述已经知道 一个方法不能修改一个基本数据类型的参数，但对象引用作为参数就不同了。</p>
+<p>idea中 T4.java证明了java不是按引用调用的。实际上 对象引用是按值调用的。</p>
+<p>总结一下java中方法参数的使用情况：1、方法不能修改基本数据类型的参数。2、方法可以改变对象参数的状态。3、方法中不能让对象参数 引用一个新对象。 见 T4.java.</p>
+<p>modify 修改，triple 三倍的</p>
+<p>从现在在 idea中注意 注释的书写。见ParamTest.java</p>
 
             </div>
             <hr/>
@@ -1479,7 +1505,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2k</span>&nbsp;字
+                class="white-color">2.9k</span>&nbsp;字
             
             
             
