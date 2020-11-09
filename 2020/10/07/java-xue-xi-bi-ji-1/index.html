@@ -570,21 +570,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-05
+                    2020-11-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    3.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    13 分
                 </div>
                 
 
@@ -713,6 +713,35 @@
 <p>总结一下java中方法参数的使用情况：1、方法不能修改基本数据类型的参数。2、方法可以改变对象参数的状态。3、方法中不能让对象参数 引用一个新对象。 见 T4.java.</p>
 <p>modify 修改，triple 三倍的</p>
 <p>从现在在 idea中注意 注释的书写。见ParamTest.java</p>
+<p>2020年11月6日20:18:48</p>
+<p>多个方法，名称相同，参数不同 是为重载（overloading）。</p>
+<p>要完整的描述一个方法，需要指出 方法名 和 参数类型。这叫做方法的签名（signature）。ex :String类有四个indexOf()的公有方法，它们的签名分别是 indexOf(int)  indexOf(int,int)  indexOf(String)  indexOf(String,int) 。返回类型不是方法签名的一部分 ，也就是说不能有两个 方法名和 参数类型相同，但返回类型不同的方法。</p>
+<p>如果在构造器中没有显示的给域赋值，那么就会自动的被赋为默认值（数值为0，布尔为false,对象引用为null），只有缺乏程序设计经验的人才会这么做，因为会影响程序代码可读性。 这是域 和局部变量最主要的不同点 ，必须明确的初始化方法中的 局部变量。但是没有初始化类中的域，就会被赋为默认值（0，false或null）。</p>
+<p>仅当类没有提供任何构造器时，系统才会提供一个默认构造器（无参数）。见 idea T5.java</p>
+<p>显示域初始化 T6.java</p>
+<p>2020年11月7日20:04:00</p>
+<p>参数命名：public Employee(String n ,double s){name = n;salary = s;}  这样命名缺陷是只有阅读代码才能了解参数 n和s的含义 。有些程序员喜欢在 name前加字符a, ex:aName,aSalary 。还有一种技巧  参数变量用相同的名字把实例域屏蔽，public Employee (String name ,double salary){this.name = name;this.salary =salary;} ,参数命名为name和salary 将引用这个参数，而不是实例域，但是采用this可以访问实例域，this 隐式参数，也就是所构造的对象。</p>
+<p>关键字this引用方法的隐式参数的 另外一个含义：如果构造器第一个语句形如this (…)，这个构造器将调用同一的类的另外一个构造器。</p>
+<p>ex:public Employee (double s)</p>
+<p>{  this(“Employee #”+ nextId,s  );</p>
+<p> nextId++;   }</p>
+<p>initialize 初始化 ，initialization 初始化，</p>
+<p>前面已经讲了两种初始化数据域的方法：在构造器中设置值，在声明中赋值。第三种 称为初始化块（initialization block）,在一个类的声明中 可以包含多个代码块，只要构造类的对象，这些代码块就会被执行。首先运行初始化代码块，再运行构造器主体部分，这种机制不是必需的，也不是常见的，通常将初始化代块放在构造器中。建议将初始化块放在域定义之后，避免循环定义。</p>
+<p>下面是调用构造器的具体处理步骤：</p>
+<p>1）所有数据域被初始化为默认值（0，false，null）</p>
+<p>2）根据类声明数据域的顺序，依次执行所有域初始化语句和初始化块。</p>
+<p>3）如果构造器第一行调用了第二个构造器，执行第二个构造器主体。</p>
+<p>4）执行这个构造器主体。</p>
+<p>所有的静态初始化语句和静态初始化块都依照类定义的顺序。</p>
+<p>在jdk 6之前，可以用java编写没有main方法的“Hello,World”程序，</p>
+<p>public class Hello</p>
+<p>{</p>
+<p>​    static</p>
+<p>​    {</p>
+<p>Syetem.out.println(“Hello,World”) ;</p>
+<p>​     }</p>
+<p>}</p>
+<p>当用java Hello 调用这个类时，就会加载这个类，静态初始化块就会打印“Hello，World”。在此之后，显示一个消息指出main未定义。在Java SE 7之后，java程序首先检查有一个main方法。 </p>
 
             </div>
             <hr/>
@@ -1505,7 +1534,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.9k</span>&nbsp;字
+                class="white-color">4.3k</span>&nbsp;字
             
             
             
