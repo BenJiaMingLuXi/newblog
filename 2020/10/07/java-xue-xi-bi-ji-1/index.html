@@ -570,21 +570,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-07
+                    2020-11-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    5.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    19 分
                 </div>
                 
 
@@ -732,7 +732,7 @@
 <p>2）根据类声明数据域的顺序，依次执行所有域初始化语句和初始化块。</p>
 <p>3）如果构造器第一行调用了第二个构造器，执行第二个构造器主体。</p>
 <p>4）执行这个构造器主体。</p>
-<p>所有的静态初始化语句和静态初始化块都依照类定义的顺序。</p>
+<p>所有的静态初始化语句和静态初始化块都依照类定义的顺序。在类的第一次加载时，将会对静态域进行初始化。</p>
 <p>在jdk 6之前，可以用java编写没有main方法的“Hello,World”程序，</p>
 <p>public class Hello</p>
 <p>{</p>
@@ -741,7 +741,44 @@
 <p>Syetem.out.println(“Hello,World”) ;</p>
 <p>​     }</p>
 <p>}</p>
-<p>当用java Hello 调用这个类时，就会加载这个类，静态初始化块就会打印“Hello，World”。在此之后，显示一个消息指出main未定义。在Java SE 7之后，java程序首先检查有一个main方法。 </p>
+<p>当用java Hello 调用这个类时，就会加载这个类，静态初始化块就会打印“Hello，World”。在此之后，显示一个消息指出main未定义。在Java SE 7之后，java程序首先检查是否有一个main方法。 </p>
+<p>2020年11月9日20:16:11</p>
+<p>2020年11月10日20:24:15</p>
+<p>java有自动的垃圾回收器，不需要人工的回收内存，所以java不支持析构器，当对象使用了内存之外的资源，例如，文件或资源使用了系统资源的另一个对象的句柄。在这种情况下，当资源不在被需要时，将其回收和再利用显得十分重要。</p>
+<p>可以为任何一个类添加finalize方法，该方法在回收器清除对象之前调用，在实际应用中，不要依赖于fianlize方法回收任何短缺的资源，这位是因为很难知道这个方法什么时候调用。</p>
+<p>有个名为System.runFinalizersOnExit(true)的方法能够确保fianalizer方法在java关闭前被调用，不够该方法不安全，也不鼓励使用，有一种代替方法Runtime.addShutdownHook  添加关闭钩 ，详细内容参看API.</p>
+<p>如果某个资源在使用完毕后立刻被关闭，那么就需要人工来，对象用完之后，可以用一个close方法来完成相应的清理操作。</p>
+<p>Java允许使用包（package）将类组织起来，借助于包可以方便的组织自己的代码，并将自己的代码和别人提供的代码库分开管理。</p>
+<p>标准的Java类库分布在多个包中，包括java.lang,java.util和java.net。</p>
+<p>标准的Java包具有一个层次结构，如同硬盘的目录嵌套一样，也可以使用嵌套层次组织包。</p>
+<p>所有标准的Java包都处于java和javax包层次中。</p>
+<p>使用包的原因是确保类名的唯一性。假如两个程序员不约而同的建立了Employee类，只要将这些类</p>
+<p>置于不同的包中，就不会产生冲突。事实上，为了包名的唯一绝对性，Sun公司建议将公司的因特网域名（这显然是独一无二的），以逆序的形式作为包名，并且对于不同的项目使用不同的子包。例如,horstmann.com是本书作者之一注册的域名。逆序形式com.horstmann。这个包还可以进一步划分子包，如com.horstmann.corejava。</p>
+<p>从编译器角度看，嵌套的包之间没有任何关系。例如java.util包与java.util.jar包毫无关系。每一个都拥有独立的类集合。</p>
+<p>类的导入：一个类可以使用所属包中的所有类，以及其他包中的公有类（public class）.下面两种方法介绍使用其他包中的公有类：第一种方式是在每个类名前加上所属包名。例如，java.time.LocalDate today = java.time.LocalDate.now();这显然很繁琐。第二种方式：是使用import语句，它是引用包含在包中的类的简明描述，一旦使用了import语句，在使用类时，就不必加包名，可以使用import语句导入一个特定的类或者整个包，import语句位于源文件顶部，但位于package语句后面，例如可以使用下面这个语句带入java.util包中所有的类 import java,util.*;</p>
+<p>包作用域：标记为public部分可以被任意类使用，标记为private的部分只能被定义它们的类使用，如果没有指定public或private，那么这个部分（类，变量，方法）可以被同一个包中所有方法使用。</p>
+<p>对于变量来说没有设置为private的话是不合适的，破坏了封装性。这真的会成为一个问题吗？答案是视情况而定。默认情况下，包不是一个密封的实体，任何人可以任意的向包中添加类，当然有敌意的或低水平的程序员可能利用包的可见性添加一些修改变量功能的代码，例如在早期的Java程序设计语言版本中，只要将 package java.awt 放入类文件的开头，就可以很容易的将其他类混入java.awt 包中，然后把结果文件放置在类路径某处的java/awt子目录下，就可以访问java.awt包的内部了，使用这一手段，可以对警告框进行设置。然而可以通过包密封（package sealing）机制来解决将各种包混杂一起的问题，如果将一个包密封起来，就不能向这个包添类了。在第九章介绍 制作包含密封包的JAR文件。</p>
+<p>2020年11月13日20:52:17</p>
+<p>2020年11月16日20:13:20</p>
+<p>2020年11月18日20:04:41</p>
+<p>为了使类能被多个程序共享，需要做到下面几点：</p>
+<p>1、把类放到同一个目录中，例如/home/user/classdir。需要注意，这个目录是包树状结构的基目录。如果希望将com.horstmann.corejava.Employee类添加到其中，这个Employee.class类文件就必须位于子目录/home/user/classdir/com/horstmann/corejava中。</p>
+<p>2、将jJAR文件放在一个目录中。例如/home/user/archives。</p>
+<p>3、设置类路径（class path）。类路径是所有包含类文件的路径的集合。</p>
+<p>在UNIX环境中，类路径的不同项目之间用：分割  ：</p>
+<p>/home/user/classdir:.:/home/user/archives/archive.jar</p>
+<p>而在windows环境中，则以分号；分割 ：</p>
+<p>c:\classdir;.;c:\archives\archives.jar</p>
+<p>在上述；两种情况中，句点（.）表示当前目录。</p>
+<p>类路径包括：</p>
+<p>●基目录/home/user/classdir或c:\classes；</p>
+<p>●当前目录（.）；</p>
+<p>●JAR文件/home/user/archives/archives.jar或c:\archives\archives.jar。</p>
+<p>从Java SE 6开始，可以在JAR文件目录中指定通配符，如下：/home/user/classdir:.:/home/user/archives/‘*’</p>
+<p>或者c:\classdir;.;c:\archives\*</p>
+<p>但在UNIX中，禁止使用*以防止shell命令进一步扩展。</p>
+<p>由于运行时库文件（rt.jar和在jre/lib与jre/lib/ext目录下的一些其他的JAR文件）会被自动地搜索，所以不必将它们显示的列在类路径中。</p>
+<p>javac编译器总是在当前的目录中查找文件，java虚拟器仅在类路径中有”.”目录时才查看当前目录，如果没有设置类路径也不会产生问题，因为默认的类路径包含”.”目录,然而如果设置了类路径却忘了包含”.”目录，则程序仍然可以编译但无法运行。</p>
 
             </div>
             <hr/>
@@ -1237,18 +1274,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/newblog/2020/10/07/java-xue-xi-bi-ji-1/">
+                <a href="/newblog/2020/11/09/ba-chang-lian-xi-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/newblog/medias/featureimages/16.jpg" class="responsive-img" alt="java基础笔记核心卷一">
+                        <img src="/newblog/medias/featureimages/9.jpg" class="responsive-img" alt="靶场练习2">
                         
-                        <span class="card-title">java基础笔记核心卷一</span>
+                        <span class="card-title">靶场练习2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1258,27 +1294,26 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/newblog/categories/java%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    java笔记
+                            <a href="/newblog/categories/hac/" class="post-category">
+                                    hac
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/newblog/tags/java%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">java基础</span>
+                    <a href="/newblog/tags/%E9%9D%B6%E5%9C%BA/">
+                        <span class="chip bg-color">靶场</span>
                     </a>
                     
                 </div>
@@ -1534,7 +1569,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.3k</span>&nbsp;字
+                class="white-color">6.1k</span>&nbsp;字
             
             
             

@@ -6,7 +6,7 @@
   <link href="http://benjiamingluxi.github.io/newblog/atom.xml" rel="self"/>
   
   <link href="http://benjiamingluxi.github.io/newblog/"/>
-  <updated>2020-11-07T13:48:21.795Z</updated>
+  <updated>2020-11-09T10:17:01.337Z</updated>
   <id>http://benjiamingluxi.github.io/newblog/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>靶场练习2</title>
+    <link href="http://benjiamingluxi.github.io/newblog/2020/11/09/ba-chang-lian-xi-2/"/>
+    <id>http://benjiamingluxi.github.io/newblog/2020/11/09/ba-chang-lian-xi-2/</id>
+    <published>2020-11-09T10:13:32.000Z</published>
+    <updated>2020-11-09T10:17:01.337Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;尤里在得到女神家网站密码后，却发现注入点权限很小，凭他的皮毛技术也没找到网站后台，&lt;br&gt;这是尤里通过旁站查询，他发现了女神家网站是用的主机空间托管，&lt;br&gt;他立刻扫描旁站，果然发现一个站点，且后台是默认路径……&lt;br&gt;尤里冷笑一声行动了起来，这时有一层防火墙拦在了他的面前</summary>
+        
+      
+    
+    
+    
+    <category term="hac" scheme="http://benjiamingluxi.github.io/newblog/categories/hac/"/>
+    
+    
+    <category term="靶场" scheme="http://benjiamingluxi.github.io/newblog/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>java基础笔记核心卷一</title>
     <link href="http://benjiamingluxi.github.io/newblog/2020/10/07/java-xue-xi-bi-ji-1/"/>
     <id>http://benjiamingluxi.github.io/newblog/2020/10/07/java-xue-xi-bi-ji-1/</id>
     <published>2020-10-07T14:51:05.000Z</published>
-    <updated>2020-11-07T13:48:21.795Z</updated>
+    <updated>2020-11-18T13:19:38.022Z</updated>
     
     
       
@@ -46,14 +71,14 @@
     <link href="http://benjiamingluxi.github.io/newblog/2020/10/07/ba-chang-lian-xi-1/"/>
     <id>http://benjiamingluxi.github.io/newblog/2020/10/07/ba-chang-lian-xi-1/</id>
     <published>2020-10-07T14:35:51.000Z</published>
-    <updated>2020-11-09T09:39:35.145Z</updated>
+    <updated>2020-11-09T10:15:18.393Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;2020年11月8日21:14​ ​ ​ :underage:&lt;/p&gt;
+    <summary type="html">&lt;p&gt;2020年11月8日21:14​ ​ ​ :underage:18&lt;/p&gt;
 &lt;p&gt;尤里正在追女神小芳，在得知小芳开了一家公司后，尤里通过whois查询发现了小芳公司网站&lt;br&gt;学过一点黑客技术的他，想在女神面前炫炫技。于是他打开了&lt;a target=&quot;_blank&quot;</summary>
         
       
